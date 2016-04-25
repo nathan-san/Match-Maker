@@ -69,8 +69,8 @@ public class Bouncing : MonoBehaviour {
             GameObject extraBall = Instantiate(this.gameObject, transform.position, Quaternion.identity)as GameObject;
             extraBall.GetComponent<Bouncing>().XSpeed = -xSpeed;
 
-            extraBall.GetComponent<Bouncing>().YSpeed = jumpForce /(sizeId+1);
-            ySpeed = jumpForce /(sizeId+1);
+            extraBall.GetComponent<Bouncing>().YSpeed = jumpForce /(sizeId/2+1);
+            ySpeed = jumpForce /(sizeId/2+1);
 
             CalculateBallDataValues();
         }

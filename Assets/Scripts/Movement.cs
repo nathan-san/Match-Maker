@@ -7,18 +7,21 @@ public class Movement : MonoBehaviour {
     [SerializeField]
     private float jumpForce;
     private Vector2 movement = Vector2.zero;
-    private bool isGrounded = true;
+    private bool isGrounded = false;
     private float ySpeed = 0;
-    private float gravity = 0.001f;
+    private float gravity = 0.005f;
 
 	void FixedUpdate () {
         movement = new Vector2(Input.GetAxis("Horizontal") * playerSpeed, ySpeed);
         transform.Translate(movement);
 
-        ySpeed -= gravity;
+        if(!isGrounded)
+        {
+            ySpeed -= gravity;
+        }
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButton("Jump") && isGrounded)
         {
             //rb.AddForce(Vector2.up * jumpForce);
             ySpeed = jumpForce;
@@ -34,6 +37,10 @@ public class Movement : MonoBehaviour {
             ySpeed = 0;
             Debug.Log("isGrounded");
             isGrounded = true;
+        }
+        else if (coll.gameObject.tag == Tags.ceiling)
+        {
+            ySpeed = -0;
         }
     }
 }
