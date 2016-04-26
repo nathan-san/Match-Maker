@@ -7,7 +7,7 @@ public class Bouncing : MonoBehaviour {
     private int sizeId = 4;
 
     [SerializeField]
-    private float xSpeed=0.05f;
+    private float xSpeed = 0.05f;
 
     private float ySpeed=0;
     private float gravityMultiplier = -0.004f;
@@ -30,6 +30,19 @@ public class Bouncing : MonoBehaviour {
     {
         transform.Translate(xSpeed,ySpeed,0f);
     }
+    void OnTriggerEnter2D(Collider2D colliderObject)
+    {
+        
+        if((transform.position.x <colliderObject.transform.position.x && xSpeed > 0) || (transform.position.x > colliderObject.transform.position.x && xSpeed < 0))
+        {
+            Damage(false);
+        }
+        else
+        {
+            Damage(true);
+        }
+        
+    }
     void OnCollisionEnter2D(Collision2D colliderObject)
     {
         if (colliderObject.gameObject.tag == Tags.ground)
@@ -45,10 +58,6 @@ public class Bouncing : MonoBehaviour {
             ySpeed = -ySpeed;
         }
     }
-    void OnMouseDown()
-    {
-        Damage();
-    }
     public float XSpeed
     {
         set { xSpeed = value; }
@@ -57,7 +66,7 @@ public class Bouncing : MonoBehaviour {
     {
         set { ySpeed = value; }
     }
-    void Damage()
+    void Damage(bool right)
     {
         if(sizeId == 0)
         {
@@ -67,9 +76,18 @@ public class Bouncing : MonoBehaviour {
         {
             sizeId--;
             GameObject extraBall = Instantiate(this.gameObject, transform.position, Quaternion.identity)as GameObject;
-            extraBall.GetComponent<Bouncing>().XSpeed = -xSpeed;
 
-            extraBall.GetComponent<Bouncing>().YSpeed = jumpForce /(sizeId/2+1);
+            if(!right)
+            {
+                extraBall.GetComponent<Bouncing>().XSpeed = -xSpeed/0.8f;
+                GetComponent<Bouncing>().XSpeed = -xSpeed;
+            }
+            else
+            {
+                extraBall.GetComponent<Bouncing>().XSpeed = xSpeed / 0.8f;
+                GetComponent<Bouncing>().XSpeed = xSpeed;
+            }
+            GetComponent<Bouncing>().YSpeed = jumpForce /(sizeId/2+1)+0.05f;
             ySpeed = jumpForce /(sizeId/2+1);
 
             CalculateBallDataValues();

@@ -10,20 +10,32 @@ public class Movement : MonoBehaviour {
     private bool isGrounded = false;
     private float ySpeed = 0;
     private float gravity = 0.005f;
+    private Vector3 scale;
+    private Vector3 leftScale;
 
-	void FixedUpdate () {
+    void Start()
+    {
+        scale = leftScale = transform.localScale;
+        leftScale.x *= -1;
+    }
+    void FixedUpdate () {
         movement = new Vector2(Input.GetAxis("Horizontal") * playerSpeed, ySpeed);
+        if(movement.x < 0)
+        {
+            transform.localScale = leftScale;
+        }
+        else if (movement.x > 0)
+        {
+            transform.localScale = scale;
+        }
         transform.Translate(movement);
-
         if(!isGrounded)
         {
             ySpeed -= gravity;
         }
-
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (Input.GetButton("Jump") && isGrounded)
         {
-            //rb.AddForce(Vector2.up * jumpForce);
             ySpeed = jumpForce;
             isGrounded = false;
         }
@@ -35,7 +47,6 @@ public class Movement : MonoBehaviour {
         if(coll.gameObject.tag == Tags.ground)
         {
             ySpeed = 0;
-            Debug.Log("isGrounded");
             isGrounded = true;
         }
         else if (coll.gameObject.tag == Tags.ceiling)
