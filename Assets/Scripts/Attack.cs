@@ -16,10 +16,12 @@ public class Attack : MonoBehaviour {
     }
     IEnumerator Attacking()
     {
-        isAttacking = true;
         hitBox.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        hitBox.SetActive(false);
+        isAttacking = true;
         yield return new WaitForSeconds(restTime);
         isAttacking = false;
-        hitBox.SetActive(false);
+
     }
 }

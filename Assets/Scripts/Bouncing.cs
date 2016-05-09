@@ -11,7 +11,7 @@ public class Bouncing : MonoBehaviour {
     private float ySpeed=0;
     private float gravityMultiplier = -0.004f;
     private float jumpForce = 0.2f;
-
+    private bool canBeHarmed = true;
     void Start()
     {
         CalculateBallDataValues();
@@ -20,27 +20,32 @@ public class Bouncing : MonoBehaviour {
     {
         transform.localScale = new Vector3(BallData.sizes[sizeId], BallData.sizes[sizeId], BallData.sizes[sizeId]);
         gravityMultiplier = BallData.gravities[sizeId];
+        StartCoroutine(CantBeHarmed());
     }
-	void Update ()
+    IEnumerator CantBeHarmed()
     {
-        ySpeed += gravityMultiplier;
-	}
+        canBeHarmed = false;
+        yield return new WaitForSeconds(0.1f);
+        canBeHarmed = true;
+    }
     void FixedUpdate()
     {
+        ySpeed += gravityMultiplier;
         transform.Translate(xSpeed,ySpeed,0f);
     }
     void OnTriggerEnter2D(Collider2D colliderObject)
     {
-        
-        if((transform.position.x <colliderObject.transform.position.x && xSpeed > 0) || (transform.position.x > colliderObject.transform.position.x && xSpeed < 0))
+        if(canBeHarmed)
         {
-            Damage(false);
+            if ((transform.position.x < colliderObject.transform.position.x && xSpeed > 0) || (transform.position.x > colliderObject.transform.position.x && xSpeed < 0))
+            {
+                Damage(false);
+            }
+            else
+            {
+                Damage(true);
+            }
         }
-        else
-        {
-            Damage(true);
-        }
-        
     }
     void OnCollisionEnter2D(Collision2D colliderObject)
     {
@@ -61,9 +66,39 @@ public class Bouncing : MonoBehaviour {
             Destroy(colliderObject.gameObject);
             GameObject.Find("SceneManager").GetComponent<SceneLoader>().RestartScene();
             //Time.timeScale = 0f;
-            
         }
     }
+    //function called when a ball is damaged by the player.
+    void Damage(bool right)
+    {
+        if (sizeId == 0)
+        {
+            Destroy(this.gameObject);
+            GameObject.Find("BallCounter").GetComponent<ObjectsWithTagCounter>().CountObjectsWithTag();
+        }
+        else
+        {
+            sizeId--;
+            GameObject extraBall = Instantiate(this.gameObject, transform.position, Quaternion.identity) as GameObject;
+
+            if (!right)
+            {
+                extraBall.GetComponent<Bouncing>().XSpeed = -xSpeed / 0.8f;
+                GetComponent<Bouncing>().XSpeed = -xSpeed;
+            }
+            else
+            {
+                extraBall.GetComponent<Bouncing>().XSpeed = xSpeed / 0.8f;
+                GetComponent<Bouncing>().XSpeed = xSpeed;
+            }
+            GetComponent<Bouncing>().YSpeed = jumpForce / (sizeId / 2 + 1) + 0.05f;
+            ySpeed = jumpForce / (sizeId / 2 + 1);
+
+            CalculateBallDataValues();
+        }
+    }
+
+    //getters and setters.
     public float XSpeed
     {
         set { xSpeed = value; }
@@ -72,32 +107,6 @@ public class Bouncing : MonoBehaviour {
     {
         set { ySpeed = value; }
     }
-    void Damage(bool right)
-    {
-        if(sizeId == 0)
-        {
-            Destroy(this.gameObject);
-            GameObject.Find("BallCounter").GetComponent<ObjectsWithTagCounter>().CountObjectsWithTag();
-        }
-        else
-        {
-            sizeId--;
-            GameObject extraBall = Instantiate(this.gameObject, transform.position, Quaternion.identity)as GameObject;
 
-            if(!right)
-            {
-                extraBall.GetComponent<Bouncing>().XSpeed = -xSpeed/0.8f;
-                GetComponent<Bouncing>().XSpeed = -xSpeed;
-            }
-            else
-            {
-                extraBall.GetComponent<Bouncing>().XSpeed = xSpeed / 0.8f;
-                GetComponent<Bouncing>().XSpeed = xSpeed;
-            }
-            GetComponent<Bouncing>().YSpeed = jumpForce /(sizeId/2+1)+0.05f;
-            ySpeed = jumpForce /(sizeId/2+1);
 
-            CalculateBallDataValues();
-        }
-    }
 }

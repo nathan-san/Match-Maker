@@ -39,11 +39,14 @@ public class Movement : MonoBehaviour {
             ySpeed = jumpForce;
             isGrounded = false;
         }
+        if(Input.GetButtonUp("Jump") && ySpeed > 0 && !isGrounded)
+        {
+            ySpeed = 0;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        //Debug.Log("isGrounded");
         if(coll.gameObject.tag == Tags.ground)
         {
             ySpeed = 0;
