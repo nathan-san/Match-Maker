@@ -7,4 +7,6 @@ public class Tags{
     public static string wall = "Wall";
     public static string ceiling = "Ceiling";
     public static string attack = "Attack";
+    public static string ball = "Ball";
+
 }

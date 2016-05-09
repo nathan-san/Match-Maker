@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class Bouncing : MonoBehaviour {
 
     [SerializeField]
@@ -57,6 +56,13 @@ public class Bouncing : MonoBehaviour {
         {
             ySpeed = -ySpeed;
         }
+        else if (colliderObject.gameObject.tag == Tags.player)
+        {
+            Destroy(colliderObject.gameObject);
+            GameObject.Find("SceneManager").GetComponent<SceneLoader>().RestartScene();
+            //Time.timeScale = 0f;
+            
+        }
     }
     public float XSpeed
     {
@@ -71,6 +77,7 @@ public class Bouncing : MonoBehaviour {
         if(sizeId == 0)
         {
             Destroy(this.gameObject);
+            GameObject.Find("BallCounter").GetComponent<ObjectsWithTagCounter>().CountObjectsWithTag();
         }
         else
         {
