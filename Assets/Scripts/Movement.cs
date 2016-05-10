@@ -33,7 +33,6 @@ public class Movement : MonoBehaviour {
         {
             ySpeed -= gravity;
         }
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (Input.GetButton("Jump") && isGrounded)
         {
             ySpeed = jumpForce;
@@ -57,4 +56,9 @@ public class Movement : MonoBehaviour {
             ySpeed = -0;
         }
     }
+    public float YSpeed
+    {
+        set { ySpeed = value; }
+    }
+
 }

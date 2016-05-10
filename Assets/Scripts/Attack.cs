@@ -8,7 +8,7 @@ public class Attack : MonoBehaviour {
     private bool isAttacking = false;
     [SerializeField]
     private float restTime = 0.1f;
-	void Update () {
+	void FixedUpdate () {
         if (Input.GetButtonDown("Fire1") && !isAttacking)
         {
             StartCoroutine(Attacking());

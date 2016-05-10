@@ -1,19 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 public class ObjectsWithTagCounter : MonoBehaviour {
     [SerializeField]
     private string tag;
     private GameObject[] objects;
     [SerializeField]
-    private Text winText;
+    private WinLoseStateManager manager;
 
     public void CountObjectsWithTag()
     {
+        StartCoroutine(Counting());
+    }
+    IEnumerator Counting()
+    {
+        yield return new WaitForSeconds(0.1f);
         objects = GameObject.FindGameObjectsWithTag(tag);
-        if (objects.Length == 1)
+        Debug.Log(objects.Length);
+        if (objects.Length ==0)
         {
-            winText.text = "You won!";
+            manager.Win(5, "Victory!");
         }
     }
 }

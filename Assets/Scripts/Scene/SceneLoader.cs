@@ -12,4 +12,14 @@ public class SceneLoader : MonoBehaviour {
     {
         SceneManager.LoadScene(name);
     }
+    public void PauseScene()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void PlayScene()
+    {
+        Time.timeScale = 1f;
+    }
+
 }

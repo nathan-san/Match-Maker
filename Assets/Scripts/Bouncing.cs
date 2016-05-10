@@ -12,6 +12,7 @@ public class Bouncing : MonoBehaviour {
     private float gravityMultiplier = -0.004f;
     private float jumpForce = 0.2f;
     private bool canBeHarmed = true;
+
     void Start()
     {
         CalculateBallDataValues();
@@ -64,8 +65,7 @@ public class Bouncing : MonoBehaviour {
         else if (colliderObject.gameObject.tag == Tags.player)
         {
             Destroy(colliderObject.gameObject);
-            GameObject.Find("SceneManager").GetComponent<SceneLoader>().RestartScene();
-            //Time.timeScale = 0f;
+            GameObject.Find("WinLoseManager").GetComponent<WinLoseStateManager>().Lost(0.5f, 3f, "You got hit!");
         }
     }
     //function called when a ball is damaged by the player.
