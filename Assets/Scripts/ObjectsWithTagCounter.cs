@@ -18,7 +18,7 @@ public class ObjectsWithTagCounter : MonoBehaviour {
         Debug.Log(objects.Length);
         if (objects.Length ==0)
         {
-            manager.Win(5, "Victory!");
+            manager.Win(1, "Victory!");
         }
     }
 }

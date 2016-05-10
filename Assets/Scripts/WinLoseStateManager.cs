@@ -6,6 +6,10 @@ public class WinLoseStateManager : MonoBehaviour {
     private Text conditionText;
     [SerializeField]
     private SceneLoader sceneLoader;
+    [SerializeField]
+    private TimeLeft timer;
+    [SerializeField]
+    private Score score;
     void Start()
     {
         
@@ -29,7 +33,13 @@ public class WinLoseStateManager : MonoBehaviour {
     }
     IEnumerator Winning(float duration, string text)
     {
+        timer.TimeScaling = 10f;
         conditionText.text = text;
+        while (timer.TimeLimit > 0)
+        {
+            score.AddScore(1);
+            yield return new WaitForSeconds(0.01f);
+        }
         yield return new WaitForSeconds(duration);
         sceneLoader.LoadScene("Main");
     }

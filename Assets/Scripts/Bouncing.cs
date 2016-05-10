@@ -19,6 +19,7 @@ public class Bouncing : MonoBehaviour {
     }
     void CalculateBallDataValues()
     {
+        ySpeed = jumpForce;
         transform.localScale = new Vector3(BallData.sizes[sizeId], BallData.sizes[sizeId], BallData.sizes[sizeId]);
         gravityMultiplier = BallData.gravities[sizeId];
         StartCoroutine(CantBeHarmed());
@@ -71,6 +72,7 @@ public class Bouncing : MonoBehaviour {
     //function called when a ball is damaged by the player.
     void Damage(bool right)
     {
+        GameObject.Find("Canvas/Score").GetComponent<Score>().AddScore(12);
         if (sizeId == 0)
         {
             Destroy(this.gameObject);
@@ -80,20 +82,9 @@ public class Bouncing : MonoBehaviour {
         {
             sizeId--;
             GameObject extraBall = Instantiate(this.gameObject, transform.position, Quaternion.identity) as GameObject;
+            extraBall.GetComponent<Bouncing>().XSpeed = xSpeed;
 
-            if (!right)
-            {
-                extraBall.GetComponent<Bouncing>().XSpeed = -xSpeed / 0.8f;
-                GetComponent<Bouncing>().XSpeed = -xSpeed;
-            }
-            else
-            {
-                extraBall.GetComponent<Bouncing>().XSpeed = xSpeed / 0.8f;
-                GetComponent<Bouncing>().XSpeed = xSpeed;
-            }
-            GetComponent<Bouncing>().YSpeed = jumpForce / (sizeId / 2 + 1) + 0.05f;
-            ySpeed = jumpForce / (sizeId / 2 + 1);
-
+            GetComponent<Bouncing>().XSpeed = -xSpeed;
             CalculateBallDataValues();
         }
     }
