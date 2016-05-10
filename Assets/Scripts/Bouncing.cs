@@ -11,7 +11,7 @@ public class Bouncing : MonoBehaviour {
     private float ySpeed=0;
     private float gravityMultiplier = -0.004f;
     private float jumpForce = 0.2f;
-    private bool canBeHarmed = true;
+    private bool canInteract = true;
 
     void Start()
     {
@@ -26,9 +26,9 @@ public class Bouncing : MonoBehaviour {
     }
     IEnumerator CantBeHarmed()
     {
-        canBeHarmed = false;
+        canInteract = false;
         yield return new WaitForSeconds(0.1f);
-        canBeHarmed = true;
+        canInteract = true;
     }
     void FixedUpdate()
     {
@@ -37,7 +37,7 @@ public class Bouncing : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D colliderObject)
     {
-        if(canBeHarmed)
+        if(canInteract)
         {
             if ((transform.position.x < colliderObject.transform.position.x && xSpeed > 0) || (transform.position.x > colliderObject.transform.position.x && xSpeed < 0))
             {
@@ -63,7 +63,7 @@ public class Bouncing : MonoBehaviour {
         {
             ySpeed = -ySpeed;
         }
-        else if (colliderObject.gameObject.tag == Tags.player)
+        else if (colliderObject.gameObject.tag == Tags.player && canInteract)
         {
             Destroy(colliderObject.gameObject);
             GameObject.Find("WinLoseManager").GetComponent<WinLoseStateManager>().Lost(0.5f, 3f, "You got hit!");
