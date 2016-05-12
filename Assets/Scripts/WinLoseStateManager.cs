@@ -12,7 +12,8 @@ public class WinLoseStateManager : MonoBehaviour {
     private Score score;
     void Start()
     {
-        
+        Bouncing.OnHittingPlayer += Lost;
+
         //Win();
     }
     public void Lost(float timeScale, float duration,string text)
@@ -43,5 +44,4 @@ public class WinLoseStateManager : MonoBehaviour {
         yield return new WaitForSeconds(duration);
         sceneLoader.LoadScene("Main");
     }
-
 }

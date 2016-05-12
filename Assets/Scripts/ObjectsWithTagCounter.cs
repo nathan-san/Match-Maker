@@ -7,15 +7,19 @@ public class ObjectsWithTagCounter : MonoBehaviour {
     [SerializeField]
     private WinLoseStateManager manager;
 
+    void Start()
+    {
+        Bouncing.OnDisappearing += CountObjectsWithTag;
+    }
     public void CountObjectsWithTag()
     {
+        
         StartCoroutine(Counting());
     }
     IEnumerator Counting()
     {
         yield return new WaitForSeconds(0.1f);
         objects = GameObject.FindGameObjectsWithTag(tag);
-        Debug.Log(objects.Length);
         if (objects.Length ==0)
         {
             manager.Win(1, "Victory!");

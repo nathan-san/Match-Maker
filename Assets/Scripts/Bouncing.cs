@@ -13,6 +13,14 @@ public class Bouncing : MonoBehaviour {
     private float jumpForce = 0.2f;
     private bool canInteract = true;
 
+    public delegate void DamageAction(float value);
+    public static event DamageAction OnDamage;
+
+    public delegate void CountAction();
+    public static event CountAction OnDisappearing;
+
+    public delegate void HitPlayer(float timeScale, float duration, string text);
+    public static event HitPlayer OnHittingPlayer;
     void Start()
     {
         CalculateBallDataValues();
@@ -24,6 +32,7 @@ public class Bouncing : MonoBehaviour {
         gravityMultiplier = BallData.gravities[sizeId];
         StartCoroutine(CantBeHarmed());
     }
+
     IEnumerator CantBeHarmed()
     {
         canInteract = false;
@@ -66,25 +75,35 @@ public class Bouncing : MonoBehaviour {
         else if (colliderObject.gameObject.tag == Tags.player && canInteract)
         {
             Destroy(colliderObject.gameObject);
-            GameObject.Find("WinLoseManager").GetComponent<WinLoseStateManager>().Lost(0.5f, 3f, "You got hit!");
+            if(OnHittingPlayer != null)
+            {
+                OnHittingPlayer(0.5f, 3f, "You got hit!");
+            }
         }
     }
     //function called when a ball is damaged by the player.
     void Damage(bool right)
     {
-        GameObject.Find("Canvas/Score").GetComponent<Score>().AddScore(12);
+        if(OnDamage != null)
+        {
+            OnDamage(12 * (sizeId+1));
+        }
         if (sizeId == 0)
         {
             Destroy(this.gameObject);
-            GameObject.Find("BallCounter").GetComponent<ObjectsWithTagCounter>().CountObjectsWithTag();
+            if(OnDisappearing != null)
+            {
+                OnDisappearing();
+            }
         }
         else
         {
             sizeId--;
             GameObject extraBall = Instantiate(this.gameObject, transform.position, Quaternion.identity) as GameObject;
-            extraBall.GetComponent<Bouncing>().XSpeed = xSpeed;
 
+            extraBall.GetComponent<Bouncing>().XSpeed = xSpeed;
             GetComponent<Bouncing>().XSpeed = -xSpeed;
+
             CalculateBallDataValues();
         }
     }
