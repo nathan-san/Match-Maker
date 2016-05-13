@@ -2,8 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 public class Score : MonoBehaviour {
-    [SerializeField]
-    private float score = 000000;
+    private static float score = 0;
     private char[] characters = new char[5];
     [SerializeField]
     private Text[] scoreTexts;

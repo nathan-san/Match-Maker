@@ -70,6 +70,7 @@ public class Bouncing : MonoBehaviour {
             Destroy(colliderObject.gameObject);
             EventManager.HittingPlayer(0.5f, 3f, "You got hit!");
         }
+        
     }
     //function called when a ball is damaged by the player.
     void Damage(bool right)

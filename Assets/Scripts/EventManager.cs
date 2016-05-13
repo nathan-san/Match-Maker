@@ -2,20 +2,24 @@
 using System.Collections;
 
 public class EventManager {
-    public delegate void DamageAction(float value);
-    public static event DamageAction OnDamage;
+    public delegate void BallIsHitted(float value);
+    public static event BallIsHitted OnDamage;
 
-    public delegate void CountAction();
-    public static event CountAction OnDisappearing;
+    public delegate void SmallBallDestroyed();
+    public static event SmallBallDestroyed OnDisappearing;
 
-    public delegate void HitPlayer(float timeScale, float duration, string text);
-    public static event HitPlayer OnHittingPlayer;
+    public delegate void BallHitsPlayer(float timeScale, float duration, string text);
+    public static event BallHitsPlayer OnHittingPlayer;
+
+    public delegate void PlayerWins(float duration, string text);
+    public static event PlayerWins OnWinning;
 
     public static void Nullify()
     {
         OnDamage = null;
         OnDisappearing = null;
         OnHittingPlayer = null;
+        OnWinning = null;
     }
     public static void Damage(float value)
     {
@@ -28,5 +32,9 @@ public class EventManager {
     public static void Count()
     {
         OnDisappearing();
+    }
+    public static void Win(float duration, string text)
+    {
+        OnWinning(duration, text);
     }
 }

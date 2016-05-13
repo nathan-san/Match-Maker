@@ -22,6 +22,7 @@ public class ObjectsWithTagCounter : MonoBehaviour {
         objects = GameObject.FindGameObjectsWithTag(tag);
         if (objects.Length ==0)
         {
+            EventManager.Win(1, "Victory!");
             manager.Win(1, "Victory!");
         }
     }
