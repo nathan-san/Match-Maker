@@ -13,17 +13,10 @@ public class Bouncing : MonoBehaviour {
     private float jumpForce = 0.2f;
     private bool canInteract = true;
 
-    public delegate void DamageAction(float value);
-    public static event DamageAction OnDamage;
-
-    public delegate void CountAction();
-    public static event CountAction OnDisappearing;
-
-    public delegate void HitPlayer(float timeScale, float duration, string text);
-    public static event HitPlayer OnHittingPlayer;
+    
     void Start()
     {
-        CalculateBallDataValues();
+         CalculateBallDataValues();
     }
     void CalculateBallDataValues()
     {
@@ -75,26 +68,19 @@ public class Bouncing : MonoBehaviour {
         else if (colliderObject.gameObject.tag == Tags.player && canInteract)
         {
             Destroy(colliderObject.gameObject);
-            if(OnHittingPlayer != null)
-            {
-                OnHittingPlayer(0.5f, 3f, "You got hit!");
-            }
+            EventManager.HittingPlayer(0.5f, 3f, "You got hit!");
         }
     }
     //function called when a ball is damaged by the player.
     void Damage(bool right)
     {
-        if(OnDamage != null)
-        {
-            OnDamage(12 * (sizeId+1));
-        }
+        EventManager.Damage(12 * (sizeId+1));
         if (sizeId == 0)
         {
+
             Destroy(this.gameObject);
-            if(OnDisappearing != null)
-            {
-                OnDisappearing();
-            }
+
+            EventManager.Count();
         }
         else
         {

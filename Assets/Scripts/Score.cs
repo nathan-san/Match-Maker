@@ -9,7 +9,7 @@ public class Score : MonoBehaviour {
     private Text[] scoreTexts;
     void Start()
     {
-        Bouncing.OnDamage += AddScore;
+        EventManager.OnDamage += AddScore;
         UpdateScore();
     }
     public void AddScore(float increment)

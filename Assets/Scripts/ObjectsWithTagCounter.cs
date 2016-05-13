@@ -9,7 +9,7 @@ public class ObjectsWithTagCounter : MonoBehaviour {
 
     void Start()
     {
-        Bouncing.OnDisappearing += CountObjectsWithTag;
+        EventManager.OnDisappearing += CountObjectsWithTag;
     }
     public void CountObjectsWithTag()
     {

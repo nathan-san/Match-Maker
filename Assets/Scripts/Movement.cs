@@ -60,7 +60,7 @@ public class Movement : MonoBehaviour {
         }
         else if (coll.gameObject.tag == Tags.ceiling)
         {
-            ySpeed = -0;
+            ySpeed = 0;
         }
     }
     public float YSpeed
