@@ -3,13 +3,11 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
     [SerializeField]
+    private AudioClip jumpSound;
+    [SerializeField]
     private float playerSpeed;
     [SerializeField]
     private float jumpForce;
-    [SerializeField]
-    private float maxSpeed = 0.5f;
-    [SerializeField]
-    private float aceleration = 0.001f;
     private Vector2 movement = Vector2.zero;
     private bool isGrounded = false;
     private float ySpeed = 0;
@@ -42,6 +40,8 @@ public class Movement : MonoBehaviour {
         }
         if (Input.GetButton("Jump") && isGrounded)
         {
+            GetComponent<AudioSource>().clip = jumpSound;
+            GetComponent<AudioSource>().Play();
             ySpeed = jumpForce;
             isGrounded = false;
         }

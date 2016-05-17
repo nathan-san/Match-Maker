@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class Attack : MonoBehaviour {
-
+    [SerializeField]
+    private AudioClip attacksound;
     [SerializeField]
     private GameObject hitBox;
     private bool isAttacking = false;
@@ -16,6 +17,8 @@ public class Attack : MonoBehaviour {
     }
     IEnumerator Attacking()
     {
+        GetComponent<AudioSource>().clip = attacksound;
+        GetComponent<AudioSource>().Play();
         hitBox.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         hitBox.SetActive(false);

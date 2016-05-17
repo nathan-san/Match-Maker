@@ -13,11 +13,13 @@ public class Score : MonoBehaviour {
     }
     public void AddScore(float increment)
     {
-        score += increment;
+        ScoreData.AddValue(increment);
         UpdateScore();
     }
     public void UpdateScore()
     {
+        score = ScoreData.score;
+
         characters = score.ToString().ToCharArray();
         for (int s = 0; s < scoreTexts.Length; s++)
         {

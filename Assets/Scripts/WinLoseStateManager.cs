@@ -78,8 +78,8 @@ public class WinLoseStateManager : MonoBehaviour {
         yield return new WaitForSeconds(duration);
         if(levelNumber >= levelCount)
         {
-            conditionText.fontSize = 50;
-            conditionText.text = "you have beaten the game!";
+            conditionText.fontSize = 60;
+            conditionText.text = "you have beaten \n the game!";
             Debug.Log("you have beaten the game!");
         }
         else

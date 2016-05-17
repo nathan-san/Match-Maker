@@ -35,7 +35,8 @@ public class Bouncing : MonoBehaviour {
     void FixedUpdate()
     {
         ySpeed += gravityMultiplier;
-        transform.Translate(xSpeed,ySpeed,0f);
+        transform.Rotate(0f, 0f, xSpeed *100f);
+        transform.Translate(xSpeed,ySpeed,0f, Space.World);
     }
     void OnTriggerEnter2D(Collider2D colliderObject)
     {
@@ -56,6 +57,8 @@ public class Bouncing : MonoBehaviour {
         if (colliderObject.gameObject.tag == Tags.ground)
         {
             ySpeed = jumpForce;
+            GetComponent<AudioSource>().pitch = 2 - sizeId / 5;
+            GetComponent<AudioSource>().Play();
         }
         else if(colliderObject.gameObject.tag == Tags.wall)
         {
@@ -70,6 +73,7 @@ public class Bouncing : MonoBehaviour {
             Destroy(colliderObject.gameObject);
             EventManager.HittingPlayer(0.5f, 3f, "You got hit!");
         }
+        
         
     }
     //function called when a ball is damaged by the player.
