@@ -5,6 +5,8 @@ public class Movement : MonoBehaviour {
     [SerializeField]
     private AudioClip jumpSound;
     [SerializeField]
+    private AudioClip landSound;
+    [SerializeField]
     private float playerSpeed;
     [SerializeField]
     private float jumpForce;
@@ -45,7 +47,7 @@ public class Movement : MonoBehaviour {
             ySpeed = jumpForce;
             isGrounded = false;
         }
-        if(Input.GetButtonUp("Jump") && ySpeed > 0 && !isGrounded)
+        if(!Input.GetButton("Jump") && ySpeed > 0 && !isGrounded)
         {
             ySpeed = 0;
         }
@@ -57,10 +59,19 @@ public class Movement : MonoBehaviour {
         {
             ySpeed = 0;
             isGrounded = true;
+            GetComponent<AudioSource>().clip = landSound;
+            GetComponent<AudioSource>().Play();
         }
         else if (coll.gameObject.tag == Tags.ceiling)
         {
             ySpeed = 0;
+        }
+    }
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == Tags.ground)
+        {
+            isGrounded = false;
         }
     }
     public float YSpeed

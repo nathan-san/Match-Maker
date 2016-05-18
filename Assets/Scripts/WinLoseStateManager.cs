@@ -26,7 +26,6 @@ public class WinLoseStateManager : MonoBehaviour {
     private Text introText;
     void Start()
     {
-        //Time.timeScale = 1f;
         EventManager.OnHittingPlayer += Lost;
         EventManager.OnWinning += Win;
         StartCoroutine(Intro(2,0.001f));
@@ -66,14 +65,15 @@ public class WinLoseStateManager : MonoBehaviour {
     }
     IEnumerator Winning(float duration, string text)
     {
-
+        AudioSource source = GetComponent<AudioSource>();
         timer.TimeScaling = 10;
         conditionHolder.SetActive(true);
         conditionText.text = text;
         while (timer.TimeLimit > 0)
         {
-            score.AddScore(10);
-            yield return new WaitForSeconds(0.01f);
+            score.AddScore(1);
+            source.Play();
+            yield return new WaitForSeconds(0.05f);
         }
         yield return new WaitForSeconds(duration);
         if(levelNumber >= levelCount)

@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ScoreData {
-    public static float score = 3;
+public class ScoreData : MonoBehaviour
+{
+    public static float score = 0;
 
     public static void AddValue(float value)
     {
         score += value;
     }
-    public static void SetValueZero()
+    public void SetValueZero()
     {
         score = 0;
     }

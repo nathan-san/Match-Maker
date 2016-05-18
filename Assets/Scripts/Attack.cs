@@ -17,14 +17,15 @@ public class Attack : MonoBehaviour {
     }
     IEnumerator Attacking()
     {
+        //plays the attack sound
         GetComponent<AudioSource>().clip = attacksound;
         GetComponent<AudioSource>().Play();
+
+        isAttacking = true;
         hitBox.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         hitBox.SetActive(false);
-        isAttacking = true;
         yield return new WaitForSeconds(restTime);
         isAttacking = false;
-
     }
 }

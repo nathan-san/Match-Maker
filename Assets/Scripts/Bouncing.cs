@@ -42,14 +42,7 @@ public class Bouncing : MonoBehaviour {
     {
         if(canInteract)
         {
-            if ((transform.position.x < colliderObject.transform.position.x && xSpeed > 0) || (transform.position.x > colliderObject.transform.position.x && xSpeed < 0))
-            {
-                Damage(false);
-            }
-            else
-            {
-                Damage(true);
-            }
+            Damage();
         }
     }
     void OnCollisionEnter2D(Collision2D colliderObject)
@@ -72,12 +65,11 @@ public class Bouncing : MonoBehaviour {
         {
             Destroy(colliderObject.gameObject);
             EventManager.HittingPlayer(0.5f, 3f, "You got hit!");
-        }
-        
-        
+        }        
     }
+
     //function called when a ball is damaged by the player.
-    void Damage(bool right)
+    void Damage()
     {
         EventManager.Damage(12 * (sizeId+1));
         if (sizeId == 0)
