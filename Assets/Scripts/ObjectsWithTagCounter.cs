@@ -4,8 +4,6 @@ public class ObjectsWithTagCounter : MonoBehaviour {
     [SerializeField]
     private string tag;
     private GameObject[] objects;
-    [SerializeField]
-    private WinLoseStateManager manager;
 
     void Start()
     {
@@ -23,7 +21,6 @@ public class ObjectsWithTagCounter : MonoBehaviour {
         if (objects.Length ==0)
         {
             EventManager.Win(1, "Victory!");
-            manager.Win(1, "Victory!");
         }
     }
 }

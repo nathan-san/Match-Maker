@@ -24,6 +24,8 @@ public class WinLoseStateManager : MonoBehaviour {
     private GameObject introHolder;
     [SerializeField]
     private Text introText;
+    [SerializeField]
+    private Text levelText;
     void Start()
     {
         EventManager.OnHittingPlayer += Lost;
@@ -32,6 +34,7 @@ public class WinLoseStateManager : MonoBehaviour {
     }
     private IEnumerator Intro(float duration, float timeScale)
     {
+        levelText.text = "level " + levelNumber.ToString();
         Time.timeScale = timeScale;
         int i = 0;
         while(i <3)
@@ -76,7 +79,7 @@ public class WinLoseStateManager : MonoBehaviour {
             yield return new WaitForSeconds(0.05f);
         }
         yield return new WaitForSeconds(duration);
-        if(levelNumber >= levelCount)
+        if(levelNumber >= LevelData.maxLevel)
         {
             conditionText.fontSize = 60;
             conditionText.text = "you have beaten \n the game!";
@@ -84,6 +87,9 @@ public class WinLoseStateManager : MonoBehaviour {
         }
         else
         {
+            if(LevelData.levelData > levelNumber)
+            LevelData.levelData++;
+            LevelData.Save();
             Debug.Log("next level...");
             sceneLoader.LoadScene("Level" + (levelNumber+1).ToString());
         }

@@ -23,5 +23,9 @@ public class SceneLoader : MonoBehaviour {
     {
         Time.timeScale = 1f;
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     
 }
