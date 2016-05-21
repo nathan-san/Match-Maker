@@ -60,6 +60,7 @@ public class WinLoseStateManager : MonoBehaviour {
         Time.timeScale = timeScale;
         yield return new WaitForSeconds(duration*timeScale);
         Time.timeScale = 1f;
+        ScoreData.score = 0;
         sceneLoader.RestartScene();
     }
     public void Win(float duration, string text)
@@ -79,18 +80,27 @@ public class WinLoseStateManager : MonoBehaviour {
             yield return new WaitForSeconds(0.05f);
         }
         yield return new WaitForSeconds(duration);
-        if(levelNumber >= LevelData.maxLevel)
+        if (levelNumber >= Data.maxLevel)
         {
             conditionText.fontSize = 60;
-            conditionText.text = "you have beaten \n the game!";
+            if(ScoreData.score > Data.personalHighScore)
+            {
+                Debug.Log(Data.personalHighScore);
+                Data.SaveHighScore(ScoreData.score);
+                Debug.Log(Data.personalHighScore);
+            }
+            conditionText.text = "you have beaten \n the game! \n Your highscore is: " + Data.personalHighScore;
             Debug.Log("you have beaten the game!");
         }
         else
         {
-            if(LevelData.levelData > levelNumber)
-            LevelData.levelData++;
-            LevelData.Save();
-            Debug.Log("next level...");
+            if (Data.levelData == levelNumber)
+            {
+                Data.levelData++;
+                Data.Save();
+            }
+            
+            Debug.Log("next level..."+ Data.levelData);
             sceneLoader.LoadScene("Level" + (levelNumber+1).ToString());
         }
     }

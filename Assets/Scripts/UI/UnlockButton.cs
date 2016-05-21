@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelButton : MonoBehaviour {
+public class UnlockButton : MonoBehaviour {
 
     [SerializeField]
     private int level = 0;
@@ -17,7 +17,9 @@ public class LevelButton : MonoBehaviour {
     }	
     void CheckIfUnlock()
     {
-        if (LevelData.levelData >= level)
+        Debug.Log(Data.levelData);
+
+        if (Data.levelData >= level)
         {
             unlocked = true;
             image.color = Color.white;
