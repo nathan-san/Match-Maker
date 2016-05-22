@@ -1,0 +1,748 @@
+fileFormatVersion: 2
+guid: 433d99f08f08aa44bb8471d086a7c257
+timeCreated: 1463922933
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Ninja_Jump_0
+    21300002: Ninja_Jump_1
+    21300004: Ninja_Jump_2
+    21300006: Ninja_Jump_3
+    21300008: Ninja_Jump_4
+    21300010: Ninja_Jump_5
+    21300012: Ninja_Jump_6
+    21300014: Ninja_Jump_7
+    21300016: Ninja_Jump_8
+    21300018: Ninja_Jump_9
+    21300020: Ninja_Jump_10
+    21300022: Ninja_Jump_11
+    21300024: Ninja_Jump_12
+    21300026: Ninja_Jump_13
+    21300028: Ninja_Jump_14
+    21300030: Ninja_Jump_15
+    21300032: Ninja_Jump_16
+    21300034: Ninja_Jump_17
+    21300036: Ninja_Jump_18
+    21300038: Ninja_Jump_19
+    21300040: Ninja_Jump_20
+    21300042: Ninja_Jump_21
+    21300044: Ninja_Jump_22
+    21300046: Ninja_Jump_23
+    21300048: Ninja_Jump_24
+    21300050: Ninja_Jump_25
+    21300052: Ninja_Jump_26
+    21300054: Ninja_Jump_27
+    21300056: Ninja_Jump_28
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 120
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Ninja_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 7494
+        width: 592
+        height: 664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42, y: 167}
+        - {x: -63, y: 167}
+        - {x: -74, y: 150}
+        - {x: -74, y: 0}
+        - {x: 38, y: 0}
+        - {x: 75, y: 58}
+        - {x: 75, y: 138}
+        - {x: 72, y: 143}
+    - name: Ninja_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 7494
+        width: 624
+        height: 656
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 165}
+        - {x: -78, y: 70}
+        - {x: -78, y: 28}
+        - {x: -71, y: 0}
+        - {x: 79, y: 0}
+        - {x: 79, y: 165}
+    - name: Ninja_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 7494
+        width: 652
+        height: 647
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50.5, y: 155.875}
+        - {x: 37.5, y: 162.875}
+        - {x: -44.5, y: 162.875}
+        - {x: -81.5, y: 100.875}
+        - {x: -81.5, y: 40.875}
+        - {x: -71.5, y: 38.875}
+        - {x: -60.5, y: 38.875}
+        - {x: -63.5, y: 1.875}
+        - {x: -59.5, y: -0.125}
+        - {x: 36.5, y: -0.125}
+        - {x: 62.5, y: 13.875}
+        - {x: 82.5, y: 73.875}
+        - {x: 82.5, y: 124.875}
+    - name: Ninja_Jump_3
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 7494
+        width: 680
+        height: 636
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43, y: 154}
+        - {x: 29, y: 160}
+        - {x: -43, y: 160}
+        - {x: -85, y: 84}
+        - {x: -85, y: 26}
+        - {x: -66, y: 2}
+        - {x: -64, y: 0}
+        - {x: 35, y: 0}
+        - {x: 86, y: 75}
+        - {x: 86, y: 101}
+        - {x: 84, y: 102}
+    - name: Ninja_Jump_4
+      rect:
+        serializedVersion: 2
+        x: 2878
+        y: 7494
+        width: 684
+        height: 636
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: 160}
+        - {x: -44.5, y: 160}
+        - {x: -85.5, y: 73}
+        - {x: -85.5, y: 13}
+        - {x: -77.5, y: 0}
+        - {x: 38.5, y: 0}
+        - {x: 86.5, y: 66}
+        - {x: 86.5, y: 114}
+    - name: Ninja_Jump_5
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 6786
+        width: 688
+        height: 632
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86, y: 95}
+        - {x: 82, y: 94}
+        - {x: 52, y: 146}
+        - {x: 27, y: 159}
+        - {x: -32, y: 159}
+        - {x: -35, y: 151}
+        - {x: -39, y: 125}
+        - {x: -86, y: 75}
+        - {x: -86, y: 44}
+        - {x: -83, y: 5}
+        - {x: -71, y: 0}
+        - {x: 62, y: 0}
+        - {x: 86, y: 71}
+        - {x: 87, y: 77}
+        - {x: 87, y: 94}
+    - name: Ninja_Jump_6
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 6786
+        width: 692
+        height: 648
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56.5, y: 163}
+        - {x: -62.5, y: 158}
+        - {x: -86.5, y: 89}
+        - {x: -86.5, y: 43}
+        - {x: -72.5, y: 0}
+        - {x: 62.5, y: 0}
+        - {x: 87.5, y: 10}
+        - {x: 87.5, y: 156}
+        - {x: 84.5, y: 163}
+    - name: Ninja_Jump_7
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 6790
+        width: 664
+        height: 660
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43, y: 166}
+        - {x: -48, y: 166}
+        - {x: -83, y: 112}
+        - {x: -83, y: 12}
+        - {x: -78, y: 0}
+        - {x: 34, y: 0}
+        - {x: 84, y: 80}
+        - {x: 84, y: 104}
+        - {x: 82, y: 105}
+    - name: Ninja_Jump_8
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 6790
+        width: 632
+        height: 676
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 10}
+        - {x: -18, y: 7}
+        - {x: -11, y: 3}
+        - {x: -1, y: 0}
+        - {x: 8, y: 0}
+        - {x: 23, y: 1}
+        - {x: 55, y: 26}
+        - {x: 80, y: 98}
+        - {x: 80, y: 117}
+        - {x: 78, y: 117}
+        - {x: 68, y: 105}
+        - {x: 44, y: 147}
+        - {x: 22, y: 170}
+        - {x: -49, y: 170}
+        - {x: -54, y: 169}
+        - {x: -62, y: 128}
+        - {x: -79, y: 87}
+        - {x: -79, y: 46}
+        - {x: -77, y: 43}
+        - {x: -63, y: 0}
+        - {x: -35, y: 0}
+        - {x: -22, y: 5}
+        - {x: -20, y: 9}
+        - {x: -20, y: 15}
+    - name: Ninja_Jump_9
+      rect:
+        serializedVersion: 2
+        x: 2910
+        y: 6786
+        width: 628
+        height: 680
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.5, y: 171}
+        - {x: -60.5, y: 160}
+        - {x: -78.5, y: 101}
+        - {x: -78.5, y: 48}
+        - {x: -75.5, y: 45}
+        - {x: -67.5, y: 41}
+        - {x: -58.5, y: 40}
+        - {x: -60.5, y: 0}
+        - {x: 43.5, y: 0}
+        - {x: 79.5, y: 77}
+        - {x: 79.5, y: 123}
+        - {x: 25.5, y: 171}
+    - name: Ninja_Jump_10
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 6074
+        width: 624
+        height: 684
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31, y: 169}
+        - {x: 20, y: 172}
+        - {x: -38, y: 172}
+        - {x: -61, y: 164}
+        - {x: -78, y: 96}
+        - {x: -78, y: 32}
+        - {x: -66, y: 0}
+        - {x: 33, y: 0}
+        - {x: 66, y: 25}
+        - {x: 79, y: 74}
+        - {x: 79, y: 135}
+    - name: Ninja_Jump_11
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 6074
+        width: 616
+        height: 680
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 67, y: 153}
+        - {x: 40, y: 171}
+        - {x: -52, y: 171}
+        - {x: -77, y: 86}
+        - {x: -77, y: 43}
+        - {x: -64, y: 0}
+        - {x: 28, y: 0}
+        - {x: 54, y: 37}
+        - {x: 78, y: 86}
+        - {x: 78, y: 123}
+    - name: Ninja_Jump_12
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 6074
+        width: 612
+        height: 680
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55.5, y: 171}
+        - {x: -64.5, y: 168}
+        - {x: -76.5, y: 128}
+        - {x: -76.5, y: 17}
+        - {x: -69.5, y: 0}
+        - {x: 43.5, y: 0}
+        - {x: 77.5, y: 55}
+        - {x: 77.5, y: 171}
+    - name: Ninja_Jump_13
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 6074
+        width: 608
+        height: 676
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -76, y: 170}
+        - {x: -76, y: 0}
+        - {x: 48, y: 0}
+        - {x: 77, y: 11}
+        - {x: 77, y: 138}
+        - {x: 66, y: 170}
+    - name: Ninja_Jump_14
+      rect:
+        serializedVersion: 2
+        x: 2910
+        y: 6074
+        width: 604
+        height: 676
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75.5, y: 99}
+        - {x: 76.5, y: 107}
+        - {x: 76.5, y: 121}
+        - {x: 75.5, y: 122}
+        - {x: 72.5, y: 121}
+        - {x: 62.5, y: 105}
+        - {x: 39.5, y: 164}
+        - {x: 31.5, y: 170}
+        - {x: -54.5, y: 170}
+        - {x: -71.5, y: 165}
+        - {x: -75.5, y: 142}
+        - {x: -75.5, y: 19}
+        - {x: -61.5, y: 0}
+        - {x: 23.5, y: 0}
+        - {x: 26.5, y: 6}
+        - {x: 56.5, y: 43}
+    - name: Ninja_Jump_15
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 5370
+        width: 600
+        height: 672
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 74, y: 122}
+        - {x: 62, y: 109}
+        - {x: 39, y: 161}
+        - {x: 32, y: 169}
+        - {x: -52, y: 169}
+        - {x: -75, y: 95}
+        - {x: -75, y: 27}
+        - {x: -56, y: 0}
+        - {x: 45, y: 0}
+        - {x: 76, y: 24}
+        - {x: 76, y: 121}
+    - name: Ninja_Jump_16
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 5374
+        width: 615
+        height: 672
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 7}
+        - {x: -1, y: 0}
+        - {x: 40, y: 0}
+        - {x: 78, y: 88}
+        - {x: 78, y: 122}
+        - {x: 76, y: 121}
+        - {x: 67, y: 110}
+        - {x: 37, y: 163}
+        - {x: 27, y: 169}
+        - {x: -29, y: 169}
+        - {x: -52, y: 162}
+        - {x: -77, y: 64}
+        - {x: -77, y: 48}
+        - {x: -65, y: 35}
+        - {x: -58, y: 0}
+        - {x: -34, y: 0}
+        - {x: -27, y: 1}
+        - {x: -19, y: 7}
+        - {x: -16, y: 11}
+    - name: Ninja_Jump_17
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 5378
+        width: 620
+        height: 672
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 10}
+        - {x: -16.5, y: 7}
+        - {x: -4.5, y: 0}
+        - {x: 30.5, y: 0}
+        - {x: 57.5, y: 28}
+        - {x: 78.5, y: 95}
+        - {x: 78.5, y: 126}
+        - {x: 36.5, y: 166}
+        - {x: 32.5, y: 169}
+        - {x: -52.5, y: 169}
+        - {x: -77.5, y: 132}
+        - {x: -77.5, y: 5}
+        - {x: -73.5, y: 0}
+        - {x: -34.5, y: 0}
+        - {x: -20.5, y: 6}
+        - {x: -18.5, y: 9}
+        - {x: -18.5, y: 14}
+    - name: Ninja_Jump_18
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 5378
+        width: 632
+        height: 686
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 10.25}
+        - {x: -21, y: 4.25}
+        - {x: -4, y: 0.25}
+        - {x: 31, y: 0.25}
+        - {x: 56, y: 27.25}
+        - {x: 80, y: 98.25}
+        - {x: 80, y: 117.25}
+        - {x: 78, y: 117.25}
+        - {x: 68, y: 105.25}
+        - {x: 22, y: 170.25}
+        - {x: 18, y: 171.25}
+        - {x: -32, y: 171.25}
+        - {x: -61, y: 159.25}
+        - {x: -57, y: 128.25}
+        - {x: -79, y: 74.25}
+        - {x: -79, y: 44.25}
+        - {x: -63, y: 0.25}
+        - {x: -35, y: 0.25}
+        - {x: -22, y: 5.25}
+        - {x: -20, y: 9.25}
+        - {x: -20, y: 15.25}
+    - name: Ninja_Jump_19
+      rect:
+        serializedVersion: 2
+        x: 2890
+        y: 5378
+        width: 664
+        height: 660
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48, y: 166}
+        - {x: -67, y: 166}
+        - {x: -83, y: 119}
+        - {x: -83, y: 35}
+        - {x: -67, y: 0}
+        - {x: 42, y: 0}
+        - {x: 66, y: 6}
+        - {x: 84, y: 78}
+        - {x: 84, y: 105}
+        - {x: 82, y: 105}
+    - name: Ninja_Jump_20
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 4670
+        width: 692
+        height: 648
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52.5, y: 0}
+        - {x: 87.5, y: 34}
+        - {x: 87.5, y: 163}
+        - {x: -61.5, y: 163}
+        - {x: -86.5, y: 148}
+        - {x: -86.5, y: 2}
+        - {x: -85.5, y: 0}
+        - {x: -25.5, y: 0}
+        - {x: -22.5, y: 1}
+        - {x: -21.5, y: 0}
+    - name: Ninja_Jump_21
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 4670
+        width: 688
+        height: 632
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41, y: 0}
+        - {x: 87, y: 54}
+        - {x: 87, y: 152}
+        - {x: 80, y: 159}
+        - {x: -59, y: 159}
+        - {x: -86, y: 81}
+        - {x: -86, y: 44}
+        - {x: -74, y: 46}
+        - {x: -66, y: 49}
+        - {x: -63, y: 2}
+        - {x: -59, y: 0}
+        - {x: -26, y: 0}
+        - {x: -23, y: 1}
+        - {x: -21, y: 0}
+    - name: Ninja_Jump_22
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 4670
+        width: 684
+        height: 636
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55.5, y: 159}
+        - {x: 43.5, y: 160}
+        - {x: -35.5, y: 160}
+        - {x: -44.5, y: 125}
+        - {x: -75.5, y: 89}
+        - {x: -85.5, y: 72}
+        - {x: -85.5, y: 11}
+        - {x: -77.5, y: 0}
+        - {x: 39.5, y: 0}
+        - {x: 86.5, y: 72}
+        - {x: 86.5, y: 97}
+        - {x: 84.5, y: 98}
+    - name: Ninja_Jump_23
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 4670
+        width: 680
+        height: 636
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 160}
+        - {x: -85, y: 77}
+        - {x: -85, y: 43}
+        - {x: -75, y: 0}
+        - {x: 41, y: 0}
+        - {x: 86, y: 71}
+        - {x: 86, y: 135}
+        - {x: 30, y: 160}
+    - name: Ninja_Jump_24
+      rect:
+        serializedVersion: 2
+        x: 2890
+        y: 4670
+        width: 652
+        height: 647
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50.5, y: 155.875}
+        - {x: 37.5, y: 162.875}
+        - {x: -45.5, y: 162.875}
+        - {x: -81.5, y: 106.875}
+        - {x: -81.5, y: 9.875}
+        - {x: -80.5, y: 8.875}
+        - {x: -66.5, y: -0.125}
+        - {x: 44.5, y: -0.125}
+        - {x: 61.5, y: 14.875}
+        - {x: 82.5, y: 75.875}
+        - {x: 82.5, y: 122.875}
+    - name: Ninja_Jump_25
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 3962
+        width: 628
+        height: 656
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.5, y: 31}
+        - {x: 17.5, y: 29}
+        - {x: 26.5, y: 19}
+        - {x: 56.5, y: 32}
+        - {x: 79.5, y: 88}
+        - {x: 79.5, y: 115}
+        - {x: 77.5, y: 115}
+        - {x: 70.5, y: 109}
+        - {x: 36.5, y: 165}
+        - {x: -46.5, y: 165}
+        - {x: -78.5, y: 123}
+        - {x: -78.5, y: 6}
+        - {x: -73.5, y: 0}
+        - {x: 23.5, y: 0}
+        - {x: 25.5, y: 7}
+        - {x: 19.5, y: 27}
+        - {x: 15.5, y: 30}
+    - name: Ninja_Jump_26
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 3962
+        width: 594
+        height: 664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75, y: 121}
+        - {x: 73, y: 122}
+        - {x: 67, y: 114}
+        - {x: 42, y: 70}
+        - {x: 43, y: 161}
+        - {x: 30, y: 167}
+        - {x: -34, y: 167}
+        - {x: -42, y: 166}
+        - {x: -74, y: 106}
+        - {x: -74, y: 0}
+        - {x: 26, y: 0}
+        - {x: 27, y: 7}
+        - {x: 59, y: 46}
+        - {x: 75, y: 95}
+    - name: Ninja_Jump_27
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 3962
+        width: 592
+        height: 672
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 31}
+        - {x: 29, y: 24}
+        - {x: 32, y: 24}
+        - {x: 63, y: 33}
+        - {x: 75, y: 93}
+        - {x: 75, y: 131}
+        - {x: 37, y: 169}
+        - {x: -74, y: 169}
+        - {x: -74, y: 0}
+        - {x: 28, y: 0}
+        - {x: 29, y: 2}
+        - {x: 20, y: 35}
+        - {x: 22, y: 35}
+    - name: Ninja_Jump_28
+      rect:
+        serializedVersion: 2
+        x: 2071
+        y: 4435
+        width: 6
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -16,9 +16,10 @@ public class Movement : MonoBehaviour {
     private float gravity = 0.005f;
     private Vector3 scale;
     private Vector3 leftScale;
-
+    private Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         scale = leftScale = transform.localScale;
         leftScale.x *= -1;
     }
@@ -52,11 +53,12 @@ public class Movement : MonoBehaviour {
             ySpeed = 0;
         }
     }
-
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if(coll.gameObject.tag == Tags.ground)
+
+        if (coll.gameObject.tag == Tags.ground)
         {
+            animator.SetBool("grounded", true);
             ySpeed = 0;
             isGrounded = true;
             GetComponent<AudioSource>().clip = landSound;
@@ -71,6 +73,7 @@ public class Movement : MonoBehaviour {
     {
         if (coll.gameObject.tag == Tags.ground)
         {
+            animator.SetBool("grounded", false);
             isGrounded = false;
         }
     }

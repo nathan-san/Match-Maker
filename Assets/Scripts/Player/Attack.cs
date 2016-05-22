@@ -9,6 +9,15 @@ public class Attack : MonoBehaviour {
     private bool isAttacking = false;
     [SerializeField]
     private float restTime = 0.1f;
+
+    [SerializeField]
+    private bool animating = false;
+    private Animator animator;
+
+    void Start()
+    {
+        if (animating) animator = GetComponent<Animator>();
+    }
 	void Update () {
         if (Input.GetButtonDown("Fire1") && !isAttacking)
         {
@@ -22,10 +31,18 @@ public class Attack : MonoBehaviour {
         GetComponent<AudioSource>().Play();
 
         isAttacking = true;
+        if (animating)
+            animator.SetBool("attacking", true);
+        yield return new WaitForSeconds(0.01f);
+        if (animating)
+            animator.SetBool("attacking", false);
+
         hitBox.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         hitBox.SetActive(false);
-        yield return new WaitForSeconds(restTime);
         isAttacking = false;
+
+
+
     }
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public class Data : MonoBehaviour {
     public static int levelData;
     public static float personalHighScore;
-    public static int maxLevel = 2;
+    public static int maxLevel = 5;
     void Start () {
         //ClearPlayerPrefs();
         Load();
