@@ -6,7 +6,6 @@ public class TextShowsHighscore : MonoBehaviour {
     private Text text;
     void Start()
     {
-        Debug.Log("h");
         text.text = "Highscore: " + Data.personalHighScore.ToString();
     }
 }
